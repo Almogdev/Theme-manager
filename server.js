@@ -11,12 +11,11 @@ app.set("view engine", "ejs");
 
 const path = require('path');
 app.use(express.static(path.join(__dirname, "css")));
-//app.use(express.static(path.join(__dirname, "views")));
 
 var db_M = require('./database');
 global.db_pool = db_M.pool;
 
-const ThemeSite = require('./MainPage_R');
+const ThemeSite = require('/routes/themeR');
 app.use('/', ThemeSite);
 
 app.listen(port, () => {
